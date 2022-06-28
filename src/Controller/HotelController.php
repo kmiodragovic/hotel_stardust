@@ -18,5 +18,27 @@ class HotelController extends AbstractController
         ]);
     }
 
+    /**
+    * @Route("/rooms", name="app_rooms")
+    */
+    public function rooms(CategoryRepository $categoryRepository):Response
+    {
+        $categories = $categoryRepository->findAll();
+
+        return $this->render('hotel/rooms.html.twig',[
+            'categories' => $categories,
+        ]);
+    }
+
+    /**
+    * @Route("/rooms/{id}", name="app_room")
+    */
+    public function room(Category $category):Response
+    {
+        return $this->render('hotel/room.html.twig',[
+            'rooms' => $category->getRooms(),
+            'category' => $category
+        ]);
+    }
 
 }
