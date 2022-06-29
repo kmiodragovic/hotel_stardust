@@ -15,4 +15,21 @@ class UserController extends AbstractController
             'controller_name' => 'UserController',
         ]);
     }
+    /**
+     * @Route("/room", name="app_room")
+     */
+    public function room():Response
+    {
+        return $this->render('user/index.html.twig',[
+        ]);
+    }
+
+    /**
+     * @Route("/user/rooms/reservation", name="app_reservation")
+     */
+    public function reservation():Response
+    {
+        return $this->render('user/reservation.html.twig');
+    }
+
 }
