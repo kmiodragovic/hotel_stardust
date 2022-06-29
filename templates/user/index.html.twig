@@ -9,30 +9,23 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>Hello User</h1>
 
-    This friendly message is coming from:
     <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/Kristian/Desktop/hotel_stardust/src/Controller/UserController.php'|file_link(0) }}">src/Controller/UserController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/Kristian/Desktop/hotel_stardust/templates/user/index.html.twig'|file_link(0) }}">templates/user/index.html.twig</a></code></li>
         <li>Your logout at <code><a href="{{ path('logout') }}">uitloggen</a></code></li>
     </ul>
 
+    {% for kamers in kamer %}
+
     <div class="card">
-        <img src="/images/rooms/room1.jpg" alt="Avatar" style="width:100%">
+        <img src="{{ kamer.image }}" alt="Avatar" style="width:100%">
         <div class="container">
-            <h4><b>Luxe Suite</b></h4>
+            <h4><b>{{ kamer.name }}</b></h4>
             <a class="btn btn-lg btn-circle btn-outline-white" href="/reservation">Book!</a>
         </div>
     </div>
 
-    <div class="card">
-        <img src="/images/rooms/room2.jpg" alt="Avatar" style="width:100%">
-        <div class="container">
-            <h4><b>Exclusive Suite</b></h4>
-            <a class="btn btn-lg btn-circle btn-outline-white" href="/reservation">Book!</a>
-        </div>
-    </div>
+    {% endfor %}
 
 </div>
 

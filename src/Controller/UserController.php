@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\KamerRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -22,14 +23,6 @@ class UserController extends AbstractController
     {
         return $this->render('user/index.html.twig',[
         ]);
-    }
-
-    /**
-     * @Route("/user/rooms/reservation", name="app_reservation")
-     */
-    public function reservation():Response
-    {
-        return $this->render('user/reservation.html.twig');
     }
 
 }
